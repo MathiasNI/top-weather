@@ -4,26 +4,24 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const [data,setData]=useState([]);
-  const getData=()=>{
-    fetch('https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=60.37747&lon=5.38713&altitude=643'
-    )
-    .then(response => response.json())
-    .then(result => setData(result))
-    }
+  const [data, setData] = useState(null);
 
   useEffect(()=>{
-    getData()
+    fetch('https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=60.37747&lon=5.38713&altitude=643')
+    .then(response => response.json())
+    .then(function(result) {
+      setData(result);
+      return console.log(result)
+    })
     },[])
+
+  if (!data) return <div>Laster...</div>;
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          {data.toString()}
-          {data && data.length>0 && data.map((item)=><p>{item}</p>)}
-        </p>
+        <p>{data.geometry.type.toString()}</p>
         <a
           className="App-link"
           href="https://reactjs.org"
