@@ -1,2 +1,2 @@
-// Mountains
+// Components
 export { default as Forecast } from './Forecast';

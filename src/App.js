@@ -1,3 +1,7 @@
+// Persistence
+import { Locations } from './persistence';
+
+// Components
 import { Forecast } from './components';
 
 import logo from './logo.svg';
@@ -9,8 +13,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>HEADER</p>
-        {Forecast('Ulriken', '60.37747', '5.38713', '643')}
+        {Locations && Locations.map((location) => (
+          Forecast(location.name, location.latitude, location.longitude, location.altitude)
+        ))}
         <a
           className="App-link"
           href="https://reactjs.org"
