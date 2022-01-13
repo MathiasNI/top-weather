@@ -1,11 +1,7 @@
-import React, {useEffect, useState } from 'react';
-import { Ulriken } from './mountains';
+import { Forecast } from './components';
 
 import logo from './logo.svg';
 import './App.css';
-
-
-
 
 function App() {
 
@@ -13,7 +9,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Ulriken/>
+        <p>HEADER</p>
+        {Forecast('Ulriken', '60.37747', '5.38713', '643')}
         <a
           className="App-link"
           href="https://reactjs.org"
