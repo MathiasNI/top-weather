@@ -1,8 +1,42 @@
 import React, {useEffect, useState } from 'react';
+import styled from 'styled-components';
+
+const ListItem = styled.div`
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 11rem;
+
+  background-color: white;
+  border-radius: 0.5rem;
+  margin: 0.4rem;
+  filter: drop-shadow(0.25rem 0.25rem 0.5rem rgba(0,0,0,0.1));
+
+  border-left-style: solid;
+  border-left-width: 7px;
+  border-left-color: #fd71af;
+`;
+
+const ListItemText = styled.div`
+  color: black;
+`;
+
+function NextFiveHours(timeseries) {
+  return(
+  <>
+  {timeseries && timeseries.map((forecast) => (
+    <p>{forecast.data.instant.details.air_pressure_at_sea_level.toString()}</p>
+  ))}
+  </>
+  );
+}
+
 
 function Forecast(name, latitude, longitude, altitude) {
   const [weatherDataList, setWeatherDataList] = useState(null);
-  const url = 'https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=' + latitude + '&lon=' + longitude + '&altitude=' + altitude;
+
+  const url = 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=' + latitude + '&lon=' + longitude + '&altitude=' + altitude;
   useEffect(()=>{
     fetch(url)
       .then(response => response.json())
@@ -15,10 +49,10 @@ function Forecast(name, latitude, longitude, altitude) {
   if (!weatherDataList) return <div>Laster...</div>;
 
   return (
-    <p>{name}: {weatherDataList.geometry.type.toString()}</p>
+    <ListItem>
+      <ListItemText> {name}: {NextFiveHours(weatherDataList.properties.timeseries)} </ListItemText>
+    </ListItem>
   );
 }
 
 export default Forecast;
-
-

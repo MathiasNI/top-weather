@@ -13,8 +13,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        {Locations && Locations.map((location) => (
-          Forecast(location.name, location.latitude, location.longitude, location.altitude)
+        {Locations && Locations.map((location, index) => (
+          <div key={index}>
+            {Forecast(location.name, location.latitude, location.longitude, location.altitude)}
+          </div>
         ))}
         <a
           className="App-link"
