@@ -1,6 +1,8 @@
 import React, {useEffect, useState } from 'react';
 import styled from 'styled-components';
 
+import logo from '../logo.svg'
+
 const ListItem = styled.div`
   display: flex;
   flex-direction: row;
@@ -14,27 +16,62 @@ const ListItem = styled.div`
   margin: 0rem 0rem 0.4rem 0rem;
 `;
 
-const LocationName = styled.div`
+const LocationName = styled.h4`
   color: white;
   padding: 0.2rem;
-  width: 30%;
+  width: 40%;
+`;
+
+const RowWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `;
 
 const ForecastItem = styled.div`
-  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 0.2rem;
-  width: 5%;
+  width: 20%;
+`;
 
+const ForecastIcon = styled.img`
+  width: 3rem;
+`;
+
+const ForecastText = styled.p`
+  margin: 0rem 0.4rem 0rem 0rem;
+  color: white;
 `;
 
 function ForecastPerHour(timeseries) {
   return(
   <>
-  {timeseries && timeseries.slice(1, 5).map((forecast, index) => (
-    <ForecastItem key={index}>
-      {Math.round(forecast.data.instant.details.air_temperature).toString()}
-    </ForecastItem>
-  ))}
+    {timeseries && timeseries.slice(2, 5).map((forecast, index) => (
+      <ForecastItem key={index}>
+        <ForecastText>
+          {forecast.time.slice(11,13)}
+        </ForecastText>
+        <RowWrapper>
+          <ForecastIcon src={logo}/>
+          <ForecastText  
+            style={{color: forecast.data.instant.details.air_temperature <= 0 ? "#03A9F1" : "#E42C64"}}
+          >
+            {Math.round(forecast.data.instant.details.air_temperature)}° 
+          </ForecastText>
+        </RowWrapper>
+        <RowWrapper>
+          <ForecastText  style={{color: "#74B1D8"}}>
+            {forecast.data.next_1_hours.details.precipitation_amount}
+          </ForecastText>
+          <ForecastText style={{color: "#BEC7D7"}}>
+            {Math.round(forecast.data.instant.details.wind_speed)}
+            ({Math.round(forecast.data.instant.details.wind_speed_of_gust)})
+          </ForecastText>
+        </RowWrapper>
+      </ForecastItem>
+    ))}
   </>
   );
 }
