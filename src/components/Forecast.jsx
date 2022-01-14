@@ -1,7 +1,8 @@
 import React, {useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-import logo from '../logo.svg'
+// Icons
+import logo from '../assets/icons/clearsky_night.svg'
 
 const ListItem = styled.div`
   display: flex;

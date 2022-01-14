@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+// Icons
+
 // Persistence
 import { Locations } from './persistence';
 
