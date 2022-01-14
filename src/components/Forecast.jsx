@@ -1,8 +1,10 @@
 import React, {useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-// Icons
-import logo from '../assets/icons/clearsky_night.svg'
+// Weather symbols
+const reqSvgs = require.context ( '../assets/symbols/', true, /\.svg$/ )
+const paths = reqSvgs.keys ()
+const svgs = paths.map( path => reqSvgs ( path ) )
 
 const ListItem = styled.div`
   display: flex;
@@ -38,11 +40,11 @@ const ForecastItem = styled.div`
 `;
 
 const ForecastIcon = styled.img`
-  width: 3rem;
+  width: 2.5rem;
 `;
 
 const ForecastText = styled.p`
-  margin: 0rem 0.4rem 0rem 0rem;
+  margin: 0.2rem 0rem 0rem 0.4rem;
   color: white;
 `;
 
@@ -55,11 +57,11 @@ function ForecastPerHour(timeseries) {
           {forecast.time.slice(11,13)}
         </ForecastText>
         <RowWrapper>
-          <ForecastIcon src={logo}/>
+          <ForecastIcon src={svgs[10]}/>
           <ForecastText  
             style={{color: forecast.data.instant.details.air_temperature <= 0 ? "#03A9F1" : "#E42C64"}}
           >
-            {Math.round(forecast.data.instant.details.air_temperature)}° 
+            {Math.round(forecast.data.instant.details.air_temperature)}°
           </ForecastText>
         </RowWrapper>
         <RowWrapper>
