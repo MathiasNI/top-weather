@@ -2,24 +2,22 @@ import React, {useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const ListItem = styled.div`
-  padding: 1rem;
   display: flex;
   flex-direction: row;
-  width: 100%;
-  height: 11rem;
 
-  background-color: white;
+  background-color: #282c34;
+  padding: 1rem;
+
   border-radius: 0.5rem;
   margin: 0.4rem;
   filter: drop-shadow(0.25rem 0.25rem 0.5rem rgba(0,0,0,0.1));
 `;
 
 const ListItemText = styled.div`
-  color: black;
+  color: white;
 `;
 
 function NextFiveHours(timeseries) {
-  var test = timeseries.slice(0,4)
   return(
   <>
   {timeseries && timeseries.slice(1, 5).map((forecast) => (
@@ -41,6 +39,7 @@ function Forecast(name, latitude, longitude, altitude) {
         setWeatherDataList(result);
         return console.log(result)
       })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
   if (!weatherDataList) return <div>Laster...</div>;

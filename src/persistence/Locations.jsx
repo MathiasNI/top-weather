@@ -1,4 +1,6 @@
-export default [
+// List over locations that will appear in Forecast
+
+const Locations = [
   {
     name: 'Fløyen',
     latitude: '60.39444',
@@ -42,3 +44,5 @@ export default [
     altitude: '392',
   },
 ]
+
+export default Locations;
