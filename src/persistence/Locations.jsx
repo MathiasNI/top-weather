@@ -43,6 +43,12 @@ const Locations = [
     longitude: '5.3403',
     altitude: '392',
   },
+  {
+    name: 'Gullfjellet',
+    latitude: '60.37313',
+    longitude: '5.58038',
+    altitude: '986',
+  },
 ]
 
 export default Locations;
