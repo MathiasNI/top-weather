@@ -4,24 +4,36 @@ import styled from 'styled-components';
 const ListItem = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 
-  background-color: #282c34;
-  padding: 1rem;
-
+  background-color: #2F333C;
   border-radius: 0.5rem;
-  margin: 0.4rem;
-  filter: drop-shadow(0.25rem 0.25rem 0.5rem rgba(0,0,0,0.1));
+
+  padding: 0.8rem;
+  margin: 0rem 0rem 0.4rem 0rem;
 `;
 
-const ListItemText = styled.div`
+const LocationName = styled.div`
   color: white;
+  padding: 0.2rem;
+  width: 30%;
 `;
 
-function NextFiveHours(timeseries) {
+const ForecastItem = styled.div`
+  color: white;
+  padding: 0.2rem;
+  width: 5%;
+
+`;
+
+function ForecastPerHour(timeseries) {
   return(
   <>
-  {timeseries && timeseries.slice(1, 5).map((forecast) => (
-    <p>{forecast.data.instant.details.air_pressure_at_sea_level.toString()}</p>
+  {timeseries && timeseries.slice(1, 5).map((forecast, index) => (
+    <ForecastItem key={index}>
+      {Math.round(forecast.data.instant.details.air_temperature).toString()}
+    </ForecastItem>
   ))}
   </>
   );
@@ -46,7 +58,8 @@ function Forecast(name, latitude, longitude, altitude) {
 
   return (
     <ListItem>
-      <ListItemText> {name}: {NextFiveHours(weatherDataList.properties.timeseries)} </ListItemText>
+      <LocationName> {name}: </LocationName>
+      {ForecastPerHour(weatherDataList.properties.timeseries)}
     </ListItem>
   );
 }
