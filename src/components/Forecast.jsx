@@ -12,10 +12,6 @@ const ListItem = styled.div`
   border-radius: 0.5rem;
   margin: 0.4rem;
   filter: drop-shadow(0.25rem 0.25rem 0.5rem rgba(0,0,0,0.1));
-
-  border-left-style: solid;
-  border-left-width: 7px;
-  border-left-color: #fd71af;
 `;
 
 const ListItemText = styled.div`
@@ -23,9 +19,10 @@ const ListItemText = styled.div`
 `;
 
 function NextFiveHours(timeseries) {
+  var test = timeseries.slice(0,4)
   return(
   <>
-  {timeseries && timeseries.map((forecast) => (
+  {timeseries && timeseries.slice(1, 5).map((forecast) => (
     <p>{forecast.data.instant.details.air_pressure_at_sea_level.toString()}</p>
   ))}
   </>
@@ -35,9 +32,9 @@ function NextFiveHours(timeseries) {
 
 function Forecast(name, latitude, longitude, altitude) {
   const [weatherDataList, setWeatherDataList] = useState(null);
-
-  const url = 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=' + latitude + '&lon=' + longitude + '&altitude=' + altitude;
+  
   useEffect(()=>{
+    const url = 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=' + latitude + '&lon=' + longitude + '&altitude=' + altitude;
     fetch(url)
       .then(response => response.json())
       .then(function(result) {
