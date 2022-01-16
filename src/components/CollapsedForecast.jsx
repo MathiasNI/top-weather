@@ -65,12 +65,12 @@ function CollapsedForecast(name, weatherDataList) {
       {weatherDataList.properties.timeseries && weatherDataList.properties.timeseries.slice(2, 5).map((forecast, index) => (
         <ForecastContainer key={index}>
           <Time>
-            {forecast.time.slice(11,16)}
+            {forecast.time.slice(11,13)}
           </Time>
           <RowWrapper>
             <Symbol src={svgs[getSymbolIndex(forecast.data.next_1_hours.summary.symbol_code)]}/>
             <Temperature  
-              style={{color: forecast.data.instant.details.air_temperature <= 0 ? "#03A9F1" : "#E42C64"}}
+              style={{color: Math.round(forecast.data.instant.details.air_temperature) <= 0 ? "#03A9F1" : "#E42C64"}}
             >
               {Math.round(forecast.data.instant.details.air_temperature)}°
             </Temperature>

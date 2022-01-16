@@ -109,17 +109,17 @@ function ExpandedForecast(name, weatherDataList) {
         <Description>Nedbør</Description>
         <Description>Vind(kast)</Description>
       </RowWrapper>
-      {weatherDataList.properties.timeseries && weatherDataList.properties.timeseries.slice(2, 8).map((forecast, index) => (
+      {weatherDataList.properties.timeseries && weatherDataList.properties.timeseries.slice(2, 14).map((forecast, index) => (
       <RowWrapper key={index}>
         <Time>{forecast.time.slice(11,13)}</Time>
         <Symbol src={svgs[getSymbolIndex(forecast.data.next_1_hours.summary.symbol_code)]}/>
         <Temperature  
-          style={{ color: forecast.data.instant.details.air_temperature <= 0 ? "#03A9F1" : "#E42C64"}}
+          style={{ color: Math.round(forecast.data.instant.details.air_temperature) <= 0 ? "#03A9F1" : "#E42C64"}}
         >
           {Math.round(forecast.data.instant.details.air_temperature)}°
         </Temperature>
         <Precipitation
-          style={{color: forecast.data.next_1_hours.details.precipitation_amount_max <= 0 ? "#2F333C" : "#6EC9F0"}}
+          style={{color: Math.round(forecast.data.next_1_hours.details.precipitation_amount_max) <= 0 ? "#2F333C" : "#6EC9F0"}}
         >
           {forecast.data.next_1_hours.details.precipitation_amount_min}-{forecast.data.next_1_hours.details.precipitation_amount_max} mm
         </Precipitation>
