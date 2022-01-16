@@ -2,22 +2,30 @@ import React from 'react';
 import styled from 'styled-components';
 
 // Logo
+import LogoIcon from '../assets/logo/logo.svg'
 
 const NavBarContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding: 0.4rem 0rem 0rem 0.6rem;
+  align-items: center;
 `;
 
-const Header = styled.h1`
+const Logo = styled.img`
+  height: 3rem;
+  `;
+
+const Header = styled.h2`
   color: #FFFFFF;
-  font-size: 2rem;
-  padding: 0.4rem 0rem 0rem 0.6rem;
-  margin: 0rem;
+  margin: 0rem 0rem 0rem 0.8rem;
 `;
 
 const NavBar = () => { 
   return (
   <>
     <NavBarContainer>
-      <Header> top-weather </Header>
+      <Logo src={LogoIcon}/>
+      <Header> Byfjellene </Header>
     </NavBarContainer>
   </>
   );

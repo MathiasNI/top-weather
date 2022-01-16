@@ -21,7 +21,6 @@ const ListItem = styled.div`
   padding: 0.6rem;
   margin: 0rem 0rem 0.4rem 0rem;
   height: 4rem;
-
 `;
 
 const LocationName = styled.h4`
@@ -73,6 +72,7 @@ function getSymbolIndex(symbol_code) {
 
 function Forecast(name, latitude, longitude, altitude) {
   const [weatherDataList, setWeatherDataList] = useState(null);
+  const [showWeatherDialog, setShowWeatherDialog] = useState(false);
   
   useEffect(()=>{
     const url = 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=' + latitude + '&lon=' + longitude + '&altitude=' + altitude;
@@ -93,7 +93,11 @@ function Forecast(name, latitude, longitude, altitude) {
   );
 
   return (
-    <ListItem>
+    <ListItem onClick={() => {
+      console.log("Open dialog")
+      setShowWeatherDialog(true);
+      console.log(showWeatherDialog)
+      }}>
       <LocationName> {name}: </LocationName>
       {weatherDataList.properties.timeseries && weatherDataList.properties.timeseries.slice(2, 5).map((forecast, index) => (
         <ForecastItem key={index}>
