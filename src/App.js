@@ -7,18 +7,22 @@ import { Locations } from './persistence';
 import { NavBar } from './components';
 import { Forecast } from './components';
 
-const Body = styled.div`
-`;
-
 const List = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0.4rem;
 `;
 
+const Footer = styled.div`
+  padding: 0.4rem;
+  color: #7B7E83;
+  font-size: 0.8rem;
+  text-align: center;
+`;
+
 function App() {
   return (
-    <Body>
+    <>
       <NavBar/>
       <List>
       {Locations && Locations.map((location, index) => (
@@ -27,7 +31,8 @@ function App() {
         </div>
       ))}
       </List>
-    </Body>
+      <Footer> Mathiasni <a style= {{color: '#7B7E83'}} href="https://github.com/MathiasNI/top-weather">(GitHub)</a></Footer>
+    </>
   );
 }
 
