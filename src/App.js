@@ -1,21 +1,13 @@
 import styled from 'styled-components';
 
-// Icons
-
 // Persistence
 import { Locations } from './persistence';
 
 // Components
+import { NavBar } from './components';
 import { Forecast } from './components';
 
 const Body = styled.div`
-`;
-
-const Header = styled.h1`
-  color: #FFFFFF;
-  font-size: 2rem;
-  padding: 0.4rem 0rem 0rem 0.6rem;
-  margin: 0rem;
 `;
 
 const List = styled.div`
@@ -27,7 +19,7 @@ const List = styled.div`
 function App() {
   return (
     <Body>
-      <Header> top-weather </Header>
+      <NavBar/>
       <List>
       {Locations && Locations.map((location, index) => (
         <div key={index}>
