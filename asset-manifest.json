@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/top-weather/static/css/main.e760e34d.css",
-    "main.js": "/top-weather/static/js/main.a7c4c24d.js",
+    "main.js": "/top-weather/static/js/main.9a398ac4.js",
     "static/js/787.29f72c72.chunk.js": "/top-weather/static/js/787.29f72c72.chunk.js",
     "static/media/heavysleetshowersandthunder_polartwilight.svg": "/top-weather/static/media/heavysleetshowersandthunder_polartwilight.951e634e652fd1359771.svg",
     "static/media/heavysnowshowersandthunder_polartwilight.svg": "/top-weather/static/media/heavysnowshowersandthunder_polartwilight.6f398bef6ff1e4659e23.svg",
@@ -61,6 +61,7 @@
     "static/media/heavysnowandthunder.svg": "/top-weather/static/media/heavysnowandthunder.c6deb376186155d44e94.svg",
     "static/media/lightsnowshowers_night.svg": "/top-weather/static/media/lightsnowshowers_night.7d826487d89395a11567.svg",
     "static/media/fair_day.svg": "/top-weather/static/media/fair_day.0f5e2e50940fd379710d.svg",
+    "static/media/logo.svg": "/top-weather/static/media/logo.0f5e2e50940fd379710d256674d85355.svg",
     "static/media/sleetandthunder.svg": "/top-weather/static/media/sleetandthunder.66a8dec8e3ffd26d6922.svg",
     "static/media/rainshowers_night.svg": "/top-weather/static/media/rainshowers_night.79c0ac54002c7a2737f8.svg",
     "static/media/lightsleetandthunder.svg": "/top-weather/static/media/lightsleetandthunder.51b51cca0b6b1f3a7206.svg",
@@ -89,11 +90,11 @@
     "static/media/clearsky_night.svg": "/top-weather/static/media/clearsky_night.de8410b5be4ad70db196.svg",
     "index.html": "/top-weather/index.html",
     "main.e760e34d.css.map": "/top-weather/static/css/main.e760e34d.css.map",
-    "main.a7c4c24d.js.map": "/top-weather/static/js/main.a7c4c24d.js.map",
+    "main.9a398ac4.js.map": "/top-weather/static/js/main.9a398ac4.js.map",
     "787.29f72c72.chunk.js.map": "/top-weather/static/js/787.29f72c72.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e760e34d.css",
-    "static/js/main.a7c4c24d.js"
+    "static/js/main.9a398ac4.js"
   ]
 }
