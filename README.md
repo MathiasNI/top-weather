@@ -24,7 +24,7 @@ Builds the app for and publishes the app on GitHub Pages.\
 
 You can find the original GitHub Page published [here](https://mathiasni.github.io/top-weather)
 
-### Licences
+## Licences
 
 #### Weather data
 Weather data are taken from Metrologisk Institutts open API.\
