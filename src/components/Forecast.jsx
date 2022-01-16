@@ -48,6 +48,10 @@ const ForecastText = styled.p`
   color: white;
 `;
 
+function getSymbolIndex(symbol_code) {
+  return paths.findIndex(obj => obj === "./" + symbol_code + ".svg");
+}
+
 function ForecastPerHour(timeseries) {
   return(
   <>
@@ -57,7 +61,7 @@ function ForecastPerHour(timeseries) {
           {forecast.time.slice(11,13)}
         </ForecastText>
         <RowWrapper>
-          <ForecastIcon src={svgs[10]}/>
+          <ForecastIcon src={svgs[getSymbolIndex(forecast.data.next_1_hours.summary.symbol_code)]}/>
           <ForecastText  
             style={{color: forecast.data.instant.details.air_temperature <= 0 ? "#03A9F1" : "#E42C64"}}
           >
