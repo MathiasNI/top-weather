@@ -6,11 +6,6 @@ import { CollapsedForecast } from '../components';
 import { ExpandedForecast } from '../components';
 
 const ListItem = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-
   background-color: #2F333C;
   border-radius: 0.5rem;
 
@@ -23,7 +18,6 @@ const LocationName = styled.h4`
   padding: 0.2rem;
   width: 40%;
 `;
-
 
 function Forecast(name, latitude, longitude, altitude) {
   const [weatherDataList, setWeatherDataList] = useState(null);
@@ -43,7 +37,7 @@ function Forecast(name, latitude, longitude, altitude) {
   if (!weatherDataList) 
   return (
     <ListItem>
-      <LocationName> {name}: </LocationName>
+      <LocationName> {name} </LocationName>
     </ListItem>
   );
 
