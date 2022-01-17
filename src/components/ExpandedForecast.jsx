@@ -119,9 +119,9 @@ function ExpandedForecast(name, weatherDataList) {
           {Math.round(forecast.data.instant.details.air_temperature)}°
         </Temperature>
         <Precipitation
-          style={{color: Math.round(forecast.data.next_1_hours.details.precipitation_amount_max) <= 0 ? "#2F333C" : "#6EC9F0"}}
+          style={{color: forecast.data.next_1_hours.details.precipitation_amount_max <= 0 ? "#2F333C" : "#6EC9F0"}}
         >
-          {forecast.data.next_1_hours.details.precipitation_amount_min}-{forecast.data.next_1_hours.details.precipitation_amount_max} mm
+          {forecast.data.next_1_hours.details.precipitation_amount_min} - {forecast.data.next_1_hours.details.precipitation_amount_max} mm
         </Precipitation>
         <Wind>
           {Math.round(forecast.data.instant.details.wind_speed)} ({Math.round(forecast.data.instant.details.wind_speed_of_gust)})
