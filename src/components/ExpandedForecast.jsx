@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// Persistence
+import { Beauforts, WindDirections } from '../persistence';
+
 // Icons
 import AngleDownIcon from '../assets/icons/AngleDownIcon.svg';
 
@@ -15,14 +18,6 @@ const LocationName = styled.h4`
   width: 40%;
 `;
 
-const Description = styled.p`
-  margin: 0.2rem 0rem 0rem 0.4rem;
-  text-align: center;
-  font-size: 0.8rem;
-  color: white;
-  width: 20%;
-`;
-
 const TimeDescription = styled.p`
   margin: 0.2rem 0rem 0rem 0.4rem;
   text-align: left;
@@ -30,14 +25,6 @@ const TimeDescription = styled.p`
   color: white;
   width: 20%;
 `;
-
-const SymbolDescription = styled.p`
-  margin: 0.2rem 0rem 0rem 0.4rem;
-  text-align: center;
-  font-size: 0.8rem;
-  color: white;
-  width: 10%;
-  `;
 
 const Time = styled.p`
   margin: 0.2rem 0rem 0rem 0.4rem;
@@ -47,9 +34,25 @@ const Time = styled.p`
   width: 20%;
 `;
 
+const SymbolDescription = styled.p`
+  margin: 0.2rem 0rem 0rem 0.4rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: white;
+  width: 15%;
+`;
+
 const Symbol = styled.img`
-  width: 13%;
   max-height: 50px;
+  width: 15%;
+`;
+
+const TemperatureDescription = styled.p`
+  margin: 0.2rem 0rem 0rem 0.4rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: white;
+  width: 10%;
 `;
 
 const Temperature = styled.p`
@@ -57,23 +60,63 @@ const Temperature = styled.p`
   text-align: center;
   font-size: 0.9rem;
   color: white;
-  width: 20%;
+  width: 10%;
+`;
+
+const PrecipitationDescription = styled.p`
+  margin: 0.2rem 0rem 0rem 0.4rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: white;
+  width: 10%;
 `;
 
 const Precipitation = styled.p`
-margin: 0.2rem 0rem 0rem 0.4rem;
-text-align: center;
-font-size: 0.9rem;
-color: white;
-width: 20%;
+  margin: 0.2rem 0rem 0rem 0.4rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: white;
+  width: 10%;
+`;
+
+const WindDescription = styled.p`
+  margin: 0.2rem 0rem 0rem 0.4rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: white;
+  width: 20%;
 `;
 
 const Wind = styled.p`
-margin: 0.2rem 0rem 0rem 0.4rem;
-text-align: center;
-font-size: 0.9rem;
-color: white;
-width: 20%;
+  margin: 0.2rem 0rem 0rem 0.4rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: white;
+  width: 20%;
+`;
+
+const WindTextDescription = styled.p`
+  margin: 0.2rem 0rem 0rem 0.4rem;
+  text-align: left;
+  font-size: 0.8rem;
+  color: white;
+  width: 35%;
+
+  @media (max-width: 1080px) {
+    display: none;
+  }
+`;
+
+const WindText = styled.p`
+  margin: 0.2rem 0rem 0rem 0.4rem;
+  text-align: left;
+  font-size: 0.9rem;
+  color: white;
+  width: 35%;
+
+  @media (max-width: 1080px) {
+    display: none;
+  }
 `;
 
 const StatusArrow = styled.img`
@@ -105,9 +148,10 @@ function ExpandedForecast(name, weatherDataList) {
       <RowWrapper>
         <TimeDescription>Tid</TimeDescription>
         <SymbolDescription>Vær</SymbolDescription>
-        <Description>Temp.</Description>
-        <Description>Nedbør</Description>
-        <Description>Vind(kast)</Description>
+        <TemperatureDescription>Temp.</TemperatureDescription>
+        <PrecipitationDescription>Nedbør</PrecipitationDescription>
+        <WindDescription>Vind(kast)</WindDescription>
+        <WindTextDescription>Vindbeskrivelse</WindTextDescription>
       </RowWrapper>
       {weatherDataList.properties.timeseries && weatherDataList.properties.timeseries.slice(2, 14).map((forecast, index) => (
       <RowWrapper key={index}>
@@ -126,6 +170,9 @@ function ExpandedForecast(name, weatherDataList) {
         <Wind>
           {Math.round(forecast.data.instant.details.wind_speed)} ({Math.round(forecast.data.instant.details.wind_speed_of_gust)})
         </Wind>
+        <WindText>
+          {Beauforts(forecast.data.instant.details.wind_speed)} fra {WindDirections(forecast.data.instant.details.wind_from_direction)} med vindkast på {Math.round(forecast.data.instant.details.wind_speed_of_gust)} m/s
+        </WindText>
       </RowWrapper>
       ))}
     </>
