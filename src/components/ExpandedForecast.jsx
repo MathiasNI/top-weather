@@ -23,7 +23,7 @@ const TimeDescription = styled.p`
   text-align: left;
   font-size: 0.8rem;
   color: white;
-  width: 20%;
+  width: 13%;
 `;
 
 const Time = styled.p`
@@ -31,7 +31,7 @@ const Time = styled.p`
   text-align: left;
   font-size: 0.9rem;
   color: white;
-  width: 20%;
+  width: 10%;
 `;
 
 const SymbolDescription = styled.p`
@@ -39,7 +39,7 @@ const SymbolDescription = styled.p`
   text-align: center;
   font-size: 0.8rem;
   color: white;
-  width: 15%;
+  width: 10%;
 `;
 
 const Symbol = styled.img`
@@ -68,7 +68,7 @@ const PrecipitationDescription = styled.p`
   text-align: center;
   font-size: 0.8rem;
   color: white;
-  width: 10%;
+  width: 15%;
 `;
 
 const Precipitation = styled.p`
@@ -76,7 +76,7 @@ const Precipitation = styled.p`
   text-align: center;
   font-size: 0.9rem;
   color: white;
-  width: 10%;
+  width: 15%;
 `;
 
 const WindDescription = styled.p`
@@ -100,9 +100,9 @@ const WindTextDescription = styled.p`
   text-align: left;
   font-size: 0.8rem;
   color: white;
-  width: 35%;
+  width: 30%;
 
-  @media (max-width: 1080px) {
+  @media (max-width: 730px) {
     display: none;
   }
 `;
@@ -112,9 +112,9 @@ const WindText = styled.p`
   text-align: left;
   font-size: 0.9rem;
   color: white;
-  width: 35%;
+  width: 30%;
 
-  @media (max-width: 1080px) {
+  @media (max-width: 730px) {
     display: none;
   }
 `;
@@ -171,7 +171,7 @@ function ExpandedForecast(name, weatherDataList) {
           {Math.round(forecast.data.instant.details.wind_speed)} ({Math.round(forecast.data.instant.details.wind_speed_of_gust)})
         </Wind>
         <WindText>
-          {Beauforts(forecast.data.instant.details.wind_speed)} fra {WindDirections(forecast.data.instant.details.wind_from_direction)} med vindkast på {Math.round(forecast.data.instant.details.wind_speed_of_gust)} m/s
+          {Beauforts(forecast.data.instant.details.wind_speed)} fra {WindDirections(forecast.data.instant.details.wind_from_direction)}
         </WindText>
       </RowWrapper>
       ))}
