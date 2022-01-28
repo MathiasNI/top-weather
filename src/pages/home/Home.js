@@ -1,4 +1,3 @@
-
 import * as S from './styles';
 
 // Persistence/Locations
@@ -10,6 +9,7 @@ import { Forecast } from './../../components';
 import { Footer } from './../../components';
 
 function Home() {
+
   return (
     <>
       <Header/>
