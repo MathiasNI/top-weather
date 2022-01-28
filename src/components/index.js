@@ -1,5 +1,6 @@
 // Components
-export { default as Forecast } from './Forecast';
-export { default as CollapsedForecast } from './CollapsedForecast';
-export { default as ExpandedForecast } from './ExpandedForecast';
-export { default as NavBar } from './NavBar';
+export { default as Header } from './header/Header';
+export { default as Forecast } from './forecast/Forecast';
+export { default as CollapsedForecast } from './collapsedForecast/CollapsedForecast';
+export { default as ExpandedForecast } from './expandedForecast/ExpandedForecast';
+export { default as Footer } from './footer/Footer';

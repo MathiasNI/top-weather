@@ -1,23 +1,9 @@
 import React, {useEffect, useState } from 'react';
-import styled from 'styled-components';
+import * as S from './styles';
 
 // Components
-import { CollapsedForecast } from '../components';
-import { ExpandedForecast } from '../components';
-
-const ListItem = styled.div`
-  background-color: #2F333C;
-  border-radius: 0.5rem;
-
-  padding: 0.6rem;
-  margin: 0rem 0rem 0.4rem 0rem;
-`;
-
-const LocationName = styled.h4`
-  color: white;
-  padding: 0.2rem;
-  width: 40%;
-`;
+import { CollapsedForecast } from '..';
+import { ExpandedForecast } from '..';
 
 function Forecast(name, latitude, longitude, altitude) {
   const [weatherDataList, setWeatherDataList] = useState(null);
@@ -36,18 +22,18 @@ function Forecast(name, latitude, longitude, altitude) {
 
   if (!weatherDataList) 
   return (
-    <ListItem>
-      <LocationName> {name} </LocationName>
-    </ListItem>
+    <S.Forecast>
+      <S.Location> {name} </S.Location>
+    </S.Forecast>
   );
 
   return (
-    <ListItem onClick={() => {
+    <S.Forecast onClick={() => {
       setShowAdvancedForecast(!showAdvancedForecast);
       }}>
       {!showAdvancedForecast && CollapsedForecast(name, weatherDataList)}
       {showAdvancedForecast && ExpandedForecast(name, weatherDataList)}
-    </ListItem>
+    </S.Forecast>
   );
 }
 

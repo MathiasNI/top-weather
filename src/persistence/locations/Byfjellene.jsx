@@ -1,6 +1,6 @@
 // List over locations that will appear in Forecast
 
-const Locations = [
+const Byfjellene = [
   {
     name: 'Fløyen',
     latitude: '60.39444',
@@ -51,4 +51,4 @@ const Locations = [
   },
 ]
 
-export default Locations;
+export default Byfjellene;

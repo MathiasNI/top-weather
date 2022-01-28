@@ -1,37 +1,33 @@
 import styled from 'styled-components';
 
-// Persistence
-import { Locations } from './persistence';
+// Persistence/Locations
+import { Byfjellene } from './persistence';
 
 // Components
-import { NavBar } from './components';
+import { Header } from './components';
 import { Forecast } from './components';
+import { Footer } from './components';
 
 const List = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0.4rem;
-`;
-
-const Footer = styled.div`
-  padding: 0.4rem;
-  color: #7B7E83;
-  font-size: 0.8rem;
-  text-align: center;
+  max-width: 60rem;
+  margin: auto;
 `;
 
 function App() {
   return (
     <>
-      <NavBar/>
+      <Header/>
       <List>
-      {Locations && Locations.map((location, index) => (
+      {Byfjellene && Byfjellene.map((location, index) => (
         <div key={index}>
           {Forecast(location.name, location.latitude, location.longitude, location.altitude)}
         </div>
       ))}
       </List>
-      <Footer> Mathiasni <a style= {{color: '#7B7E83'}} href="https://github.com/MathiasNI/top-weather">(GitHub)</a></Footer>
+      <Footer/>
     </>
   );
 }
