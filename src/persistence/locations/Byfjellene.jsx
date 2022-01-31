@@ -49,6 +49,12 @@ const Byfjellene = [
     longitude: '5.58038',
     altitude: '986',
   },
+  {
+    name: 'Vidden',
+    latitude: '60.40271',
+    longitude: '5.41362',
+    altitude: '602',
+  },
 ]
 
 export default Byfjellene;
