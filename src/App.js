@@ -1,9 +1,14 @@
+import { Routes, Route } from "react-router-dom";
+
 // Pages
-import { Home } from './pages';
+import { Byfjellene } from './pages';
 
 function App() {
   return (
-    <Home/>
+    <Routes>
+      <Route path="/" element={<Byfjellene />} />
+      <Route path="/byfjellene" element={<Byfjellene />} />
+    </Routes>
   );
 }
 

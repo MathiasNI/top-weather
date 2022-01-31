@@ -1,38 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from "react-router-dom";
 import * as S from './styles';
 
 // Logo
 import LogoIcon from './../../assets/logo/logo.svg'
 
-const Header = () => {
-  const [activeButton, setActiveButton] = useState("Byfjellene");
+const Header = (location) => {
 
   return (
   <S.Header>
     <S.NavBar>
       <S.Icon src={LogoIcon}/>
       <S.VerticalLine/>
-      <S.Text 
-        style={{backgroundColor: activeButton === "Byfjellene" ? "#03A9F1" : "#2F333C"}}
-        onClick={() => {
-          setActiveButton("Byfjellene")
-        }}>
-        Byfjellene 
-      </S.Text>
-      <S.Text 
-        style={{backgroundColor: activeButton === "Klatrefelt" ? "#03A9F1" : "#2F333C"}}
-        onClick={() => {
-          setActiveButton("Klatrefelt")
-        }}>
-        Klatrefelt 
-      </S.Text>
-      <S.Text 
-        style={{backgroundColor: activeButton === "Skisenter" ? "#03A9F1" : "#2F333C"}}
-        onClick={() => {
-          setActiveButton("Skisenter")
-        }}>
-        Skisenter 
-      </S.Text>
+      <Link style={{textDecoration: 'none'}} to='/byfjellene'>
+        <S.Text 
+          style={{backgroundColor: location.location === "Byfjellene" ? "#03A9F1" : "#2F333C"}}>
+          Byfjellene
+        </S.Text>
+      </Link>
+      <Link style={{textDecoration: 'none'}} to='/klatrefelt'>
+        <S.Text 
+          style={{backgroundColor: location.location === "Klatrefelt" ? "#03A9F1" : "#2F333C"}}>
+          Klatrefelt
+        </S.Text>
+      </Link>
+      <Link style={{textDecoration: 'none'}} to='/skisteder'>
+        <S.Text 
+          style={{backgroundColor: location.location === "Skisteder" ? "#03A9F1" : "#2F333C"}}>
+          Skisteder
+        </S.Text>
+      </Link>
     </S.NavBar>
   </S.Header>
   );

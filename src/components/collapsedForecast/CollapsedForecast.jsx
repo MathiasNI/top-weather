@@ -14,7 +14,6 @@ function getSymbolIndex(symbol_code) {
 }
 
 function CollapsedForecast(name, weatherDataList) {
-
   return (
     <S.Row>
       <S.Location> {name} </S.Location>

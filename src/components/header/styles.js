@@ -11,7 +11,7 @@ export const NavBar = styled.div`
   background-color: #2F333C;
   align-items: center;
   margin: 0.5rem auto 0 auto;
-  padding: 0.3rem 0.8rem 0.3rem 0.8rem;
+  padding: 0.4rem 0.8rem 0.4rem 0.8rem;
   border-radius: 0.5rem;
 `;
 
@@ -29,6 +29,6 @@ export const VerticalLine = styled.div`
 export const Text = styled.p`
   color: white;
   border-radius: 0.5rem;
-  padding: 0.4rem 0.4rem 0.4em 0.4rem;
+  padding: 0.4rem;
   margin: 0rem 0rem 0rem 0.4rem;
 `;

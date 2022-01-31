@@ -15,7 +15,7 @@ export const Forecast = styled.div`
 `;
 
 export const Time = styled.p`
-  margin: 0.2rem 0rem 0rem 0.4rem;
+  margin: 0rem;
   color: white;
   font-size: 0.8rem;
 `;
