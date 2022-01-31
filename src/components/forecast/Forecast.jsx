@@ -5,7 +5,7 @@ import * as S from './styles';
 import { CollapsedForecast } from '..';
 import { ExpandedForecast } from '..';
 
-function Forecast(name, latitude, longitude, altitude) {
+const Forecast = (name, latitude, longitude, altitude) => {
   const [weatherDataList, setWeatherDataList] = useState(null);
   const [showAdvancedForecast, setShowAdvancedForecast] = useState(false);
   

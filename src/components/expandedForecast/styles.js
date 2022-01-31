@@ -19,15 +19,15 @@ export const Time = styled.p`
   text-align: left;
   font-size: 0.9rem;
   color: white;
-  width: 10%;
+  width: 13%;
 `;
 
 export const SymbolDescription = styled.p`
-  margin: 0.2rem 0rem 0rem 0.4rem;
+  margin: 0.2rem 0rem 0rem 0rem;
   text-align: center;
   font-size: 0.8rem;
   color: white;
-  width: 10%;
+  width: 15%;
 `;
 
 export const Symbol = styled.img`

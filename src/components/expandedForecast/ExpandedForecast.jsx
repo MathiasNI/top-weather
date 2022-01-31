@@ -16,7 +16,7 @@ function getSymbolIndex(symbol_code) {
   return paths.findIndex(obj => obj === "./" + symbol_code + ".svg");
 }
 
-function ExpandedForecast(name, weatherDataList) {
+const ExpandedForecast = (name, weatherDataList) => {
   return (
     <>
       <S.Row>

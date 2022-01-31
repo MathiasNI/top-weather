@@ -9,12 +9,12 @@ import { Header } from '../../components';
 import { Forecast } from '../../components';
 import { Footer } from '../../components';
 
-const Byfjellene = () => {
+const Klatrefelt = () => {
   return (
     <>
-      <Header location={"Byfjellene"}/>
+      <Header location={"Klatrefelt"}/>
       <S.Forecasts>
-      {L.Byfjellene && L.Byfjellene.map((location, index) => (
+      {L.Klatrefelt && L.Klatrefelt.map((location, index) => (
         <div key={index}>
           {Forecast(location.name, location.latitude, location.longitude, location.altitude)}
         </div>
@@ -25,4 +25,4 @@ const Byfjellene = () => {
   );
 }
 
-export default Byfjellene;
+export default Klatrefelt;

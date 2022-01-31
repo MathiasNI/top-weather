@@ -13,7 +13,7 @@ function getSymbolIndex(symbol_code) {
   return paths.findIndex(obj => obj === "./" + symbol_code + ".svg");
 }
 
-function CollapsedForecast(name, weatherDataList) {
+const CollapsedForecast= (name, weatherDataList) => {
   return (
     <S.Row>
       <S.Location> {name} </S.Location>
