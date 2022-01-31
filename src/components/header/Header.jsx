@@ -12,19 +12,19 @@ const Header = (location) => {
     <S.NavBar>
       <S.Icon src={LogoIcon}/>
       <S.VerticalLine/>
-      <Link style={{textDecoration: 'none'}} to='/byfjellene'>
+      <Link style={{textDecoration: 'none'}} to='/top-weather/byfjellene'>
         <S.Text 
           style={{backgroundColor: location.location === "Byfjellene" ? "#03A9F1" : "#2F333C"}}>
           Byfjellene
         </S.Text>
       </Link>
-      <Link style={{textDecoration: 'none'}} to='/klatrefelt'>
+      <Link style={{textDecoration: 'none'}} to='/top-weather/klatrefelt'>
         <S.Text 
           style={{backgroundColor: location.location === "Klatrefelt" ? "#03A9F1" : "#2F333C"}}>
           Klatrefelt
         </S.Text>
       </Link>
-      <Link style={{textDecoration: 'none'}} to='/skisteder'>
+      <Link style={{textDecoration: 'none'}} to='/top-weather/skisteder'>
         <S.Text 
           style={{backgroundColor: location.location === "Skisteder" ? "#03A9F1" : "#2F333C"}}>
           Skisteder
