@@ -28,7 +28,11 @@ You can find the original GitHub Page published [here](https://mathiasni.github.
 
 #### Weather data
 Weather data are taken from Metrologisk Institutts open API.\
-You can learn more about it [here](https://api.met.no) 
+You can learn more about it [here](https://api.met.no)
+
+#### Avalanche warning data
+Avalanche warning data are taken from Varsoms open API.\
+You can learn more about it [here](https://varsom.no)
 
 #### Symbols
 Weather symbols are taken from Metrologisk Institutt.\
