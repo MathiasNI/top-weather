@@ -44,6 +44,24 @@ const Klatrefelt = [
       altitude: '36',
     },
     {
+      name: 'Perleveggen',
+      latitude: '60.58160',
+      longitude: '5.06340',
+      altitude: '181',
+    },
+    {
+      name: 'Atlantis',
+      latitude: '60.45784',
+      longitude: '4.92663',
+      altitude: '1',
+    },
+    {
+      name: 'Skytebanen',
+      latitude: '60.37062',
+      longitude: '5.31061',
+      altitude: '212',
+    },
+    {
       name: 'Stemmevatnet',
       latitude: '60.36224',
       longitude: '5.39775',
