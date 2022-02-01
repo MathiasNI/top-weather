@@ -1,6 +1,8 @@
 import React from 'react';
 import * as S from './styles';
 
+// Components
+import { AvalancheForecast } from '../';
 // Persistence
 import { Beauforts, WindDirections } from './../../persistence';
 
@@ -16,13 +18,15 @@ function getSymbolIndex(symbol_code) {
   return paths.findIndex(obj => obj === "./" + symbol_code + ".svg");
 }
 
-const ExpandedForecast = (name, weatherDataList) => {
+const ExpandedForecast = (name, weatherDataList, avelancheDataList) => {
+
   return (
     <>
       <S.Row>
         <S.Location> {name} </S.Location>
         <S.StatusArrow src={AngleDownIcon}/>
       </S.Row>
+      {AvalancheForecast(avelancheDataList)}
       <S.Row>
         <S.TimeDescription>Tid</S.TimeDescription>
         <S.SymbolDescription>Vær</S.SymbolDescription>
