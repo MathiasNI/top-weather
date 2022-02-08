@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './styles';
 
-const AvalancheForecast = (avelancheDataList) => {
+const AvalancheWarning = (avelancheDataList) => {
 
   const DangerLevelColor = (dangerLevel) => {
     if (dangerLevel === '1')
@@ -58,4 +58,4 @@ const AvalancheForecast = (avelancheDataList) => {
     return null
 }
 
-export default AvalancheForecast;
+export default AvalancheWarning;

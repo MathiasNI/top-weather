@@ -2,7 +2,7 @@ import React from 'react';
 import * as S from './styles';
 
 // Components
-import { AvalancheForecast } from '../';
+import { AvalancheWarning } from '../';
 // Persistence
 import { Beauforts, WindDirections } from './../../persistence';
 
@@ -26,7 +26,7 @@ const ExpandedForecast = (name, weatherDataList, avelancheDataList) => {
         <S.Location> {name} </S.Location>
         <S.StatusArrow src={AngleDownIcon}/>
       </S.Row>
-      {AvalancheForecast(avelancheDataList)}
+      {AvalancheWarning(avelancheDataList)}
       <S.Row>
         <S.TimeDescription>Tid</S.TimeDescription>
         <S.SymbolDescription>Vær</S.SymbolDescription>
